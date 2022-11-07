@@ -33,14 +33,13 @@ const Banner = () => {
 
 
                 <div className="absolute flex justify-end transform -translate-y-1/2 left-5 top-1/4">
-                    <p className='font-semibold text-orange-300'>SAY HAPPY THANKSGIVING</p>
-
+                    <p className='font-semibold text-orange-300'>THE ULTIMATE GET WELL GIFT</p>
                 </div>
                 <div className="absolute flex justify-end transform -translate-y-1/2 left-5 top-1/3">
-                    <h1 className='text-5xl font-bold text-orange-600'>So <br /> Grateful</h1>
+                    <h1 className='text-5xl font-bold text-orange-600'>Feel <br /> Really, <br /> Really Better</h1>
                 </div>
                 <div className="absolute flex justify-end transform -translate-y-1/2 left-5 top-1/2">
-                    <p className='font-bold text-orange-400'>Tell someone they’re on your list of blessings.</p>
+                    <p className='font-bold text-orange-400'>Send a meal, a blanket, even a Get Well Bell.</p>
 
                 </div>
 
@@ -58,10 +57,10 @@ const Banner = () => {
                 <img src="https://tse1.mm.bing.net/th?id=OIP.NMKzkg3zBBCBcM0hiKzIGQHaFR&pid=Api&P=0" alt='' className="w-full" />
 
                 <div className="absolute flex justify-end transform -translate-y-1/2 left-5 top-1/4">
-                    <p className='font-semibold text-orange-300'>SAY HAPPY THANKSGIVING</p>
+                    <p className='font-semibold text-orange-300'>THE SPOONFUL REWARDS CLUB</p>
                 </div>
                 <div className="absolute flex justify-end transform -translate-y-1/2 left-5 top-1/3">
-                    <h1 className='text-5xl font-bold text-orange-600'>So <br /> Grateful</h1>
+                    <h1 className='text-5xl font-bold text-orange-600'>Karma <br /> and <br /> Kindness</h1>
                 </div>
                 <div className="absolute flex justify-end transform -translate-y-1/2 left-5 top-1/2">
                     <p className='font-bold text-orange-400'>Tell someone they’re on your list of blessings.</p>
