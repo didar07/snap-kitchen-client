@@ -7,7 +7,7 @@ const ServiceDetails = () => {
     return (
         <div className='flex justify-between'>
             <div>
-                <h1 className='text-5xl text-center font-bold bg-orange-500 px-4 py-3 rounded-lg'>Servive Section</h1>
+                <h1 className='text-5xl text-center font-bold bg-orange-500 px-4 py-3 rounded-lg'>Service Section</h1>
                 <h2 className='text-4xl mt-5 mb-6 font-bold'>{title}</h2>
 
                 <div className="card w-96 bg-base-100 shadow-xl mb-6">

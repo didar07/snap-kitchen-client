@@ -13,13 +13,14 @@ const Header = () => {
     const menuItems = <>
         <li className='font-semibold'><Link to='/'>Home</Link></li>
         <li className='font-semibold'><Link to='/allservice'>Service</Link></li>
+        <li className='font-semibold'><Link to='/addservice'>Add Service</Link></li>
 
         {
             user?.email ?
                 <>
-
-                    <li className='font-semibold'><button className='btn btn-ghost' onClick={handleLogOut}>Logout</button></li>
                     <li className='font-semibold'><Link to='/myreview'>My review</Link></li>
+                    <li className='font-semibold'><button className='btn btn-ghost' onClick={handleLogOut}>Logout</button></li>
+
                 </>
                 :
                 <li className='font-semibold'><Link to='/login'>Login</Link></li>

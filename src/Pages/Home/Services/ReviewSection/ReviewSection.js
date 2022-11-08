@@ -16,8 +16,11 @@ const ReviewSection = () => {
     useEffect(() => {
         fetch('http://localhost:5000/reviews')
             .then(res => res.json())
-            .then(data => setReviews(data))
-    }, [])
+            .then(data => {
+                const newReviews = [...data, reviews]
+                setReviews(newReviews)
+            })
+    }, [reviews])
 
     const handleReview = event => {
         event.preventDefault()
@@ -59,8 +62,34 @@ const ReviewSection = () => {
         return (
             <div>
                 <h2 className='mt-5 mb-5 text-5xl text-center font-bold bg-orange-500 px-4 py-3 rounded-lg'>ReviewSection</h2>
+
+                <div>
+                    <h2 className='text-3xl'>Others customer Review</h2>
+
+                    <table className="table w-full">
+                        <thead>
+                            <tr>
+                                <th>
+                                </th>
+                                <th>Service Name</th>
+                                <th>Customer name</th>
+                                <th>Message</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                reviews.map(review => <ReviewRow
+                                    key={review._id}
+                                    review={review}
+                                ></ReviewRow>)
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
                 <Link to='/login'>
-                    <button className="btn btn-outline btn-secondary">Please Login to Add a review</button>
+                    <button className="btn btn-outline btn-secondary mb-8">Please Login to Add a review</button>
                 </Link>
             </div>
         )
@@ -107,15 +136,8 @@ const ReviewSection = () => {
                     <br />
                     <textarea className="textarea textarea-secondary" required name='message' placeholder="write your review"></textarea>
                     <br />
-                    <input className='btn btn-outline btn-secondary mt-4' type="submit" value="Add your review" />
+                    <input className='btn btn-outline btn-secondary mt-4 mb-9' type="submit" value="Add your review" />
                 </form>
-
-
-
-
-
-
-
 
 
                 <ToastContainer position="top-center"
