@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import SingleService from './SingleService';
 
 const AllService = () => {
 
@@ -12,7 +13,15 @@ const AllService = () => {
 
     return (
         <div>
-            <h2>{allService.length}</h2>
+            <h1 className='text-center font-bold text-lg'>Our All services</h1>
+            <div className='grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+                {
+                    allService.map(snglService => <SingleService
+                        key={snglService._id}
+                        snglService={snglService}
+                    ></SingleService>)
+                }
+            </div>
         </div>
     );
 };
