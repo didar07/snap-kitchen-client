@@ -47,11 +47,16 @@ const MyReview = () => {
                 </thead>
                 <tbody>
                     {
-                        review.map(rvwRow => <MyReviewRow
-                            key={rvwRow._id}
-                            rvwRow={rvwRow}
-                            handleDelete={handleDelete}
-                        ></MyReviewRow>)
+                        review.length === 0 ?
+                            <h1 className='text-4xl font-bold justify-center items-center mb-60 mt-60'>No review were added</h1>
+                            :
+
+                            review.map(rvwRow => <MyReviewRow
+                                key={rvwRow._id}
+                                rvwRow={rvwRow}
+
+                                handleDelete={handleDelete}
+                            ></MyReviewRow>)
                     }
                 </tbody>
             </table>
