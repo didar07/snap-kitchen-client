@@ -1,10 +1,10 @@
-import { Toast } from '@chakra-ui/react';
+
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { data } from 'autoprefixer';
+
 import ReviewRow from './ReviewRow';
 
 const ReviewSection = () => {

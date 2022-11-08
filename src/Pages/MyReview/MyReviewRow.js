@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
-import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
-const ReviewRow = ({ review }) => {
+const MyReviewRow = ({ rvwRow }) => {
     const { user } = useContext(AuthContext)
-    const { reviewName, customer, img, message } = review
+    const { reviewName, customer, img, message } = rvwRow
     return (
         <tr>
             <th>
+                <button>X</button>
             </th>
             <td>
                 <div className="flex items-center space-x-3">
@@ -38,7 +39,9 @@ const ReviewRow = ({ review }) => {
                     className="btn btn-ghost btn-xs"></button>
             </th>
         </tr>
+
+
     );
 };
 
-export default ReviewRow;
+export default MyReviewRow;
