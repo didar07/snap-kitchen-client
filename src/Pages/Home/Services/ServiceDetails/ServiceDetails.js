@@ -1,8 +1,10 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../../../hooks/useTitle';
 import ReviewSection from '../ReviewSection/ReviewSection';
 
 const ServiceDetails = () => {
+    useTitle('Service')
     const { title, description, price, img } = useLoaderData()
     return (
         <div className='flex justify-between'>

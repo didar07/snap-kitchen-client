@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import useTitle from '../../../hooks/useTitle';
 import SingleService from './SingleService';
 
 const AllService = () => {
-
+    useTitle('Service')
     const [allService, setAllService] = useState([])
 
     useEffect(() => {
