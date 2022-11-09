@@ -25,7 +25,6 @@ const Header = () => {
                 :
                 <li className='font-semibold'><Link to='/login'>Login</Link></li>
 
-
         }
     </>
 
@@ -51,7 +50,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <button className="btn btn-outline btn-warning">Blog</button>
+                    <Link to='/blog'><button className="btn btn-outline btn-warning">Blog</button></Link>
                 </div>
             </div>
         </div>
