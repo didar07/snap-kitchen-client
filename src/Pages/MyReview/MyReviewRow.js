@@ -37,7 +37,7 @@ const MyReviewRow = ({ rvwRow, handleDelete, review }) => {
             <td>{message}</td>
             <th>
                 <button
-                    className="btn btn-ghost btn-xs"></button>
+                    className="btn btn-ghost btn-xs">update</button>
             </th>
         </tr>
 

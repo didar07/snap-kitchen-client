@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
 import useTitle from '../../hooks/useTitle';
 import AddServiceCard from './AddServiceCard';
 
@@ -37,7 +38,13 @@ const AddService = () => {
             body: JSON.stringify(service)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                console.log(data)
+                if (data.acknowledged) {
+                    form.reset()
+                    toast.success('service added succefully')
+                }
+            })
             .catch(err => console.error(err))
     }
 
@@ -67,7 +74,17 @@ const AddService = () => {
                 <input className='btn btn-outline btn-secondary mt-4 mb-9' type="submit" value="Add your service" />
             </form>
 
-
+            <ToastContainer position="top-center"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light">
+            </ToastContainer>
         </div>
     );
 };
