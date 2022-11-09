@@ -15,7 +15,7 @@ const MyReviewRow = ({ rvwRow, handleDelete, review }) => {
                     <div className="avatar">
                         <div className="rounded w-24 h-24">
                             {
-                                user?.img ?
+                                img ?
                                     <img src={img} alt="" />
                                     :
                                     <img src="https://tse4.mm.bing.net/th?id=OIP.DZLWFqYqIG4l_yJaqOuJXgHaHa&pid=Api&P=0" alt="" />

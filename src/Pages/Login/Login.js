@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 const Login = () => {
 
@@ -55,6 +56,7 @@ const Login = () => {
                         </div>
                     </form>
                     <p className='text-center mb-5'>New to Snap kitchen? <Link className='btn btn-primary' to='/signup'>Signup</Link></p>
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
         </div>
