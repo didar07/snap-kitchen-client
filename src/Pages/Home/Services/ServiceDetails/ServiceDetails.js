@@ -5,8 +5,10 @@ import ReviewSection from '../ReviewSection/ReviewSection';
 
 const ServiceDetails = () => {
 
-    const { title, description, price, img } = useLoaderData()
+    const { _id, title, description, price, img } = useLoaderData()
+
     return (
+
         <div className='flex justify-between'>
             <div>
                 <h1 className='text-5xl text-center font-bold bg-orange-500 px-4 py-3 rounded-lg'>Service Section</h1>
@@ -22,7 +24,12 @@ const ServiceDetails = () => {
                     </div>
                 </div>
             </div>
-            <ReviewSection></ReviewSection>
+
+            <ReviewSection
+                service_id={_id}
+            >
+
+            </ReviewSection>
         </div>
     );
 };

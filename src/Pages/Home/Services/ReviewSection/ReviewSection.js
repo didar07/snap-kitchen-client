@@ -7,8 +7,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import ReviewRow from './ReviewRow';
 
-const ReviewSection = () => {
-    const { _id, title, price, img } = useLoaderData()
+const ReviewSection = ({ service_id }) => {
+    const { _id, title } = useLoaderData()
 
     const { user } = useContext(AuthContext)
     const [reviews, setReviews] = useState([])
@@ -37,7 +37,7 @@ const ReviewSection = () => {
 
 
         const review = {
-            reviewId: _id,
+            service_id: service_id,
             reviewName: title,
             customer: name,
             img: user.photoURL,
