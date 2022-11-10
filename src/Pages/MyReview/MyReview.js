@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import useTitle from '../../hooks/useTitle';
@@ -33,6 +34,23 @@ const MyReview = () => {
                 })
         }
     }
+    const navigate = useNavigate()
+
+    const handleUpdate = id => {
+        navigate(`/reviewupdate/${id}`)
+
+
+        // fetch(`http://localhost:5000/myreviews/${id}`, {
+        //     method: 'PATCH',
+        //     headers: {
+        //         'content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify(review)
+        // })
+        //     .then(res => res.json())
+        //     .then(data => setReview(data))
+        //     .catch(err => console.error(err))
+    }
 
     return (
         <div>
@@ -56,7 +74,7 @@ const MyReview = () => {
                             review.map(rvwRow => <MyReviewRow
                                 key={rvwRow._id}
                                 rvwRow={rvwRow}
-
+                                handleUpdate={handleUpdate}
                                 handleDelete={handleDelete}
                             ></MyReviewRow>)
                     }

@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
-import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
-const MyReviewRow = ({ rvwRow, handleDelete, review }) => {
-    const { user } = useContext(AuthContext)
+
+const MyReviewRow = ({ rvwRow, handleDelete, handleUpdate, review }) => {
+
     const { _id, reviewName, customer, img, message } = rvwRow
+
+
 
     return (
         <tr>
@@ -34,11 +35,14 @@ const MyReviewRow = ({ rvwRow, handleDelete, review }) => {
                 <br />
                 <span className="badge badge-ghost badge-sm"></span>
             </td>
-            <td>{message}</td>
+            <td><input type="text" value={message} /></td>
             <th>
-                <button
-                    className="btn btn-ghost btn-xs">update</button>
+                <button onClick={() => handleUpdate(_id)}
+                    className="btn btn-ghost btn-xs">update review</button>
+
             </th>
+
+
         </tr>
 
 

@@ -32,7 +32,7 @@ const ReviewRow = ({ review }) => {
                 <br />
                 <span className="badge badge-ghost badge-sm"></span>
             </td>
-            <td>{message}</td>
+            <td><input type="text" value={message} /></td>
             <th>
                 <button
                     className="btn btn-ghost btn-xs"></button>
