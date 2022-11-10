@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { Spinner } from '@chakra-ui/react';
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import useTitle from '../../../hooks/useTitle';
 import SingleService from './SingleService';
 
@@ -6,11 +8,23 @@ const AllService = () => {
     useTitle('Service')
     const [allService, setAllService] = useState([])
 
+    const { loading } = useContext(AuthContext)
+
     useEffect(() => {
         fetch('http://localhost:5000/allservice')
             .then(res => res.json())
             .then(data => setAllService(data))
     }, [])
+
+    if (loading) {
+        return <h1>Loading <Spinner
+            thickness='4px'
+            speed='0.65s'
+            emptyColor='gray.200'
+            color='blue.500'
+            size='xl'
+        ></Spinner></h1>
+    }
 
     return (
         <div>

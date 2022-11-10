@@ -1,6 +1,6 @@
 
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, Navigate, useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -12,6 +12,12 @@ const ReviewSection = () => {
 
     const { user } = useContext(AuthContext)
     const [reviews, setReviews] = useState([])
+    const [redirect, setRedirect] = useState(false)
+
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/'
+    const navigate = useNavigate()
+
 
     useEffect(() => {
         fetch('http://localhost:5000/reviews')
@@ -37,6 +43,7 @@ const ReviewSection = () => {
             img: user.photoURL,
             email,
             message
+
         }
 
         fetch('http://localhost:5000/reviews', {
@@ -52,6 +59,7 @@ const ReviewSection = () => {
                 if (data.acknowledged) {
                     form.reset()
                     toast.success('review added succefully')
+                    // setReviews([...reviews, review])
                 }
             })
             .catch(err => console.error(err))
@@ -61,6 +69,9 @@ const ReviewSection = () => {
     if (!user) {
         return (
             <div>
+                {
+                    redirect && <Navigate to='/login' state={{ from: location }} replace></Navigate>
+                }
                 <h2 className='mt-5 mb-5 text-5xl text-center font-bold bg-orange-500 px-4 py-3 rounded-lg'>ReviewSection</h2>
 
                 <div>
@@ -88,9 +99,9 @@ const ReviewSection = () => {
                     </table>
                 </div>
 
-                <Link to='/login'>
-                    <button className="btn btn-outline btn-secondary mb-8">Please Login to Add a review</button>
-                </Link>
+
+                <button onClick={() => setRedirect(true)} className="btn btn-outline btn-secondary mb-8">Please Login to Add a review</button>
+
             </div>
         )
     }

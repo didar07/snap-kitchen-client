@@ -1,6 +1,7 @@
 import { data } from 'autoprefixer';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 
 const ReviewUpdate = () => {
     const router = useParams()
@@ -32,8 +33,9 @@ const ReviewUpdate = () => {
             .then(res => res.json())
             .then(data => {
                 setReview(data)
-                if (data.modifiedCount > 0) {
+                if (data.modifiedCount) {
                     navigate('/myreview')
+                    toast.success('review updated successfully')
                 }
             })
 
@@ -44,14 +46,32 @@ const ReviewUpdate = () => {
         <div>
             <form onSubmit={handleUpdateReview}>
 
-                <td><input type="text" name='message' defaultValue={review?.message} /></td>
+                <h1 className='text-center text-secondary text-4xl font-semibold mb-10 bg-slate-300 px-14 w-1/2 py-7 rounded-lg shadow-lg'>Pleade Update Your Review</h1>
+                <input className='input input-bordered input-secondary input-lg w-full' type="text" name='message' defaultValue={review.message} required />
+
+
                 <br />
                 <th>
                     <button
-                        className="mb-40 btn btn-ghost btn-xs">update review</button>
+                        className="ml-64 shadow-lg mb-40 mt-14 btn btn-secondary">update review</button>
                 </th>
 
+                <ToastContainer
+                    position="top-center"
+                    autoClose={2000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="light"
+                >
+
+                </ToastContainer>
             </form>
+
         </div>
     );
 };

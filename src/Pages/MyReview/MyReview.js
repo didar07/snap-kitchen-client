@@ -40,16 +40,6 @@ const MyReview = () => {
         navigate(`/reviewupdate/${id}`)
 
 
-        // fetch(`http://localhost:5000/myreviews/${id}`, {
-        //     method: 'PATCH',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(review)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => setReview(data))
-        //     .catch(err => console.error(err))
     }
 
     return (
