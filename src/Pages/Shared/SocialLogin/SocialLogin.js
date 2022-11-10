@@ -20,7 +20,7 @@ const SocialLogin = () => {
         const currentUser = {
             user: user.email
         }
-        fetch('http://localhost:5000/jwt', {
+        fetch('https://snap-kitchen-server.vercel.app/jwt', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -12,7 +12,7 @@ const ReviewUpdate = () => {
     const [review, setReview] = useState([])
     console.log(id, review)
     useEffect(() => {
-        fetch(`http://localhost:5000/myreviews/${id}`)
+        fetch(`https://snap-kitchen-server.vercel.app/myreviews/${id}`)
             .then(res => res.json())
             .then(data => setReview(data))
     }, [id])
@@ -23,7 +23,7 @@ const ReviewUpdate = () => {
             message: event.target.message.value
         }
 
-        fetch(`http://localhost:5000/myreviews/${id}`, {
+        fetch(`https://snap-kitchen-server.vercel.app/myreviews/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

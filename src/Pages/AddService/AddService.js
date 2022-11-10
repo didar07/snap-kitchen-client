@@ -10,7 +10,7 @@ const AddService = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/allservice')
+        fetch('https://snap-kitchen-server.vercel.app/allservice')
             .then(res => res.json())
             .then(data => setNewServices(data))
     }, [])
@@ -30,7 +30,7 @@ const AddService = () => {
             description: serviceDescription
         }
 
-        fetch('http://localhost:5000/allservice', {
+        fetch('https://snap-kitchen-server.vercel.app/allservice', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

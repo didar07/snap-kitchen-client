@@ -11,7 +11,7 @@ const MyReview = () => {
     const [review, setReview] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myreviews?email=${user.email}`)
+        fetch(`https://snap-kitchen-server.vercel.app/myreviews?email=${user.email}`)
             .then(res => res.json())
             .then(data => setReview(data))
     }, [user?.email])
@@ -20,7 +20,7 @@ const MyReview = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure you want to delete?')
         if (proceed) {
-            fetch(`http://localhost:5000/myreviews/${id}`, {
+            fetch(`https://snap-kitchen-server.vercel.app/myreviews/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

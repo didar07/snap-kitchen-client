@@ -28,7 +28,7 @@ const router = createBrowserRouter([
             {
                 path: 'servicedetails/:id',
                 element: <ServiceDetails></ServiceDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/allservice/${params.id}`)
+                loader: ({ params }) => fetch(`https://snap-kitchen-server.vercel.app/allservice/${params.id}`)
             },
             {
                 path: '/myreview',

@@ -11,7 +11,7 @@ const AllService = () => {
     const { loading } = useContext(AuthContext)
 
     useEffect(() => {
-        fetch('http://localhost:5000/allservice')
+        fetch('https://snap-kitchen-server.vercel.app/allservice')
             .then(res => res.json())
             .then(data => setAllService(data))
     }, [])
